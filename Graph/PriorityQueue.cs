@@ -46,7 +46,7 @@ namespace Graphs
         {
             return this.elements[0];
         }
-        public T DequeueLowset()
+        public T DequeueLowest()
         {
             var result = this.elements[0];
             this.elements.RemoveAt(0);

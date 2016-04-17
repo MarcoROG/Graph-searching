@@ -21,7 +21,7 @@ namespace Graphs.Search
         {
             while ((this.activePaths as PriorityQueue<Path>).Count > 0)
             {
-                Path head = (this.activePaths as PriorityQueue<Path>).DequeueLowset();
+                Path head = (this.activePaths as PriorityQueue<Path>).DequeueLowest();
                 if (this.goals.Contains(head.last))
                 {
                     this._result = head;
