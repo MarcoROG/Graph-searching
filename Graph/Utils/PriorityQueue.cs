@@ -21,7 +21,9 @@ namespace Graphs.Utils
         }
         public PriorityQueue(IEnumerable<T> elements)
         {
+            if (elements == null) throw new ArgumentNullException("Provided elements can't be null");
             this.elements = elements.ToList();
+            this.elements.Sort();
         }
         public void Enqueue(T element) 
         {

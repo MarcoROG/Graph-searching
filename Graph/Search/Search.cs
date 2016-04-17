@@ -53,6 +53,10 @@ namespace Graphs.Search
         /// <param name="goals">Goals for the search</param>
         public Search(Node start, Node[] goals)
         {
+            if (start == null) throw new ArgumentNullException("Starting node can't be null");
+            if (goals == null) throw new ArgumentNullException("Goal nodes can't be null");
+            if (this.start.connectionsNumber == 0) throw new ArgumentException("Start node must have at least one neighbour");
+
             this.goals = goals;
             this.start = start;
         }

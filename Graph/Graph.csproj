@@ -44,15 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
-    <Compile Include="PriorityQueue.cs" />
-    <Compile Include="Search\BFSearch.cs" />
-    <Compile Include="Search\DFSearch.cs" />
+    <Compile Include="Utils\PriorityQueue.cs" />
+    <Compile Include="Search\Uninformed\BFSearch.cs" />
+    <Compile Include="Search\Uninformed\DFSearch.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search\LCFSearch.cs" />
+    <Compile Include="Search\Uninformed\LCFSearch.cs" />
     <Compile Include="Search\Search.cs" />
   </ItemGroup>
   <ItemGroup>

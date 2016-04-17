@@ -51,6 +51,7 @@ namespace Graphs
         /// <param name="adjacency">Adjacency matrix: null for no connection, any float for the cost</param>
         public Graph(float?[,] adjacency)
         {
+            if (adjacency == null) throw new ArgumentNullException("Adjacency matrix can't be null");
             if (adjacency.GetLength(0) != adjacency.GetLength(1)) throw new ArgumentException("Provided matrix should be square");
             for (int i = 0; i < adjacency.GetLength(0); i++)
             {

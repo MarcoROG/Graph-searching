@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{66CBB897-02CC-4D2A-B95C-6F70282DF659}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTest", "GraphTest\GraphTest.csproj", "{56EE71EF-753B-49A8-B7CA-F7D4E0D8CBEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{66CBB897-02CC-4D2A-B95C-6F70282DF659}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66CBB897-02CC-4D2A-B95C-6F70282DF659}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66CBB897-02CC-4D2A-B95C-6F70282DF659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56EE71EF-753B-49A8-B7CA-F7D4E0D8CBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56EE71EF-753B-49A8-B7CA-F7D4E0D8CBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56EE71EF-753B-49A8-B7CA-F7D4E0D8CBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56EE71EF-753B-49A8-B7CA-F7D4E0D8CBEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

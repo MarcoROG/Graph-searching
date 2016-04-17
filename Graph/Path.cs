@@ -67,6 +67,7 @@ namespace Graphs
         /// <param name="first">Starting point for the path</param>
         public Path(Connection first)
         {
+            if (first == null) throw new ArgumentNullException("First connection can't be null");
             this.steps = new List<Connection>();
             this.steps.Add(first);
         }
@@ -77,6 +78,7 @@ namespace Graphs
         /// <param name="steps">List of taken steps</param>
         public Path(List<Connection> steps)
         {
+            if (steps == null) throw new ArgumentNullException("Steps can't be null");
             this.steps = steps;
         }
 
@@ -87,6 +89,8 @@ namespace Graphs
         /// <param name="newStep">New move</param>
         public Path(Path path, Connection newStep)
         {
+            if (path == null) throw new ArgumentNullException("Path can't be null");
+            if (newStep == null) throw new ArgumentNullException("New connection can't be null");
             this.steps = path.steps.ToArray().ToList(); //Should fix implementing DeepClone
             this.steps.Add(newStep);
         }

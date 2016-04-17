@@ -63,22 +63,13 @@ namespace Graphs
 
         #region Connection Methods
         /// <summary>
-        /// Connects this node with a directed edge towards the specified node
-        /// </summary>
-        /// <param name="n">Target node</param>
-        public void connectTo(Node n)
-        {
-            var conn = new Connection(this, n);
-            this.connections.Add(conn);
-        }
-
-        /// <summary>
         /// Connects this node with a directed weighted edge towards the specified node
         /// </summary>
         /// <param name="n">Target node</param>
         /// <param name="cost">Cost of traveling the edge</param>
-        public void connectTo(Node n, float cost)
+        public void connectTo(Node n, float cost = 0)
         {
+            if (n == null) throw new ArgumentNullException("Connected node can't be null");
             var conn = new Connection(this, n, cost);
             this.connections.Add(conn);
         }
@@ -91,6 +82,7 @@ namespace Graphs
         /// <returns>Connection info</returns>
         public Connection towards(Node n)
         {
+            if (n == null) throw new ArgumentNullException("Connected node can't be null");
             return this.connections.Where(c => c.to == n).Single();
         }
         #endregion
