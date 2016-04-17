@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graph
+namespace Graphs
 {
     /// <summary>
     /// Represents a node inside a graph
@@ -99,7 +99,7 @@ namespace Graph
         {
             return this.value == null ? "unknown" : this.value.ToString();
         }
-        public string ToString(bool complete = false)
+        public string ToString(bool complete)
         {
             if (!complete) return this.ToString();
             string ret = this.ToString() + " Neighbours : ";

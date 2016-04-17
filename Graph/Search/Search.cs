@@ -4,11 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graph.Search
+namespace Graphs.Search
 {
+    /// <summary>
+    /// Abstract class for a search algorithm
+    /// </summary>
     abstract class Search
     {
+        #region Attributes
+        /// <summary>
+        /// Set of nodes recognized as goals
+        /// </summary>
         public Node[] goals { get; set; }
+
+        /// <summary>
+        /// Path leading from the start to a goal
+        /// </summary>
         public Path result
         {
             get
@@ -17,11 +28,42 @@ namespace Graph.Search
                 return this._result;
             }
         }
-        protected Path _result;
-        protected LinkedList<Node> visitedNodes { get; set; } = new LinkedList<Node>();
-        protected IEnumerable<Path> activePaths { get; set; }
-        protected Node start { get; set; }
 
+        /// <summary>
+        /// Private member for result
+        /// </summary>
+        protected Path _result;
+
+        /// <summary>
+        /// List of visited nodes to avoid falling into loops
+        /// </summary>
+        protected LinkedList<Node> visitedNodes { get; set; } = new LinkedList<Node>();
+
+        /// <summary>
+        /// List of active paths in the frontier
+        /// </summary>
+        protected IEnumerable<Path> activePaths { get; set; }
+
+        /// <summary>
+        /// Node from which the search starts
+        /// </summary>
+        protected Node start { get; set; }
+        #endregion
+
+        /// <summary>
+        /// Creates a Search class
+        /// </summary>
+        /// <param name="goals">Goals for the search</param>
+        public Search(Node start, Node[] goals)
+        {
+            this.goals = goals;
+            this.start = start;
+        }
+
+        /// <summary>
+        /// Start point for a graph search
+        /// </summary>
+        /// <returns>A path from the start to the goal</returns>
         public abstract Path Start();
     }
 }

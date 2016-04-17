@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graph
+namespace Graphs
 {
     /// <summary>
     /// Class representing a path through a graph
     /// </summary>
-    class Path
+    class Path : IComparable
     {
         #region Attributes
         /// <summary>
@@ -18,13 +18,18 @@ namespace Graph
         public List<Connection> steps { get; set; }
 
         /// <summary>
-        /// Total cost of moving through the graph
+        /// Total cost of moving through the graph, lazy
         /// </summary>
         public float cost {
             get{
-                return this.steps.Sum(s => s.cost);
+                if (_cost == null)
+                {
+                    _cost = this.steps.Sum(s => s.cost);
+                }
+                return (float)_cost;
             }
         }
+        private float? _cost = null;
 
         /// <summary>
         /// Starting point of the path
@@ -106,6 +111,13 @@ namespace Graph
                 s += c.to.value.ToString() + "-";
             }
             return s;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+            Path other = obj as Path;
+            return this.cost.CompareTo(other.cost);
         }
     }
 }

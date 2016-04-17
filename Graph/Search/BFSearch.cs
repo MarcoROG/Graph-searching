@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Graphs;
 
 namespace Graphs.Search
 {
     /// <summary>
-    /// Depth-First uninformed search
+    /// Beadth-First uninformed search
     /// </summary>
-    class DFSearch : Search
-    {     
-        public DFSearch(Node start, Node[] goal) : base(start, goal)
+    class BFSearch : Search
+    {
+        public BFSearch(Node start, Node[] goals) : base(start, goals)
         {
-            this.activePaths = new Stack<Path>();
-            foreach(var conn in start.connections)
+            this.activePaths = new Queue<Path>();
+            foreach (var conn in start.connections)
             {
-                (this.activePaths as Stack<Path>).Push(new Path(conn));
+                (this.activePaths as Queue<Path>).Enqueue(new Path(conn));
             }
         }
 
         public override Path Start()
         {
-            while ((this.activePaths as Stack<Path>).Count > 0)
+            while ((this.activePaths as Queue<Path>).Count > 0)
             {
-                Path head = (this.activePaths as Stack<Path>).Pop();
+                Path head = (this.activePaths as Queue<Path>).Dequeue();
                 if (this.goals.Contains(head.last))
                 {
                     this._result = head;
@@ -40,7 +39,7 @@ namespace Graphs.Search
                         if (!visitedNodes.Contains(conn.to))
                         {
                             Path newPath = new Path(head, conn);
-                            (this.activePaths as Stack<Path>).Push(newPath);
+                            (this.activePaths as Queue<Path>).Enqueue(newPath);
                         }
                     }
                 }

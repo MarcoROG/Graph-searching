@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Graph.Search;
+using Graphs.Search;
 
-namespace Graph
+namespace Graphs
 {
     class Program
     {
@@ -22,14 +22,14 @@ namespace Graph
             adj[3, 1] = 1;
             adj[3, 11] = 1;
             adj[3, 12] = 1;
-            adj[4, 5] = 1;
-            adj[4, 7] = 1;
+            adj[4, 5] = 5;//
+            adj[4, 7] = 1;//
             adj[5, 6] = 1;
             adj[5, 7] = 1;
-            adj[5, 9] = 1;
+            adj[5, 9] = 4;//
             adj[6, 9] = 1;
             adj[7, 8] = 1;
-            adj[7, 9] = 1;
+            adj[7, 9] = 10;//
             adj[8, 10] = 1;
             adj[9, 8] = 1;
             adj[9, 10] = 1;
@@ -43,11 +43,11 @@ namespace Graph
 
             Graph gr = new Graph(adj);
 
-            DFSearch search = new DFSearch(gr.nodes[1], new Node[] { gr.nodes[13] });
+            Search.Search search = new LCFSearch(gr.nodes[1], new Node[] { gr.nodes[13] });
             var sw = Stopwatch.StartNew();
             var best = search.Start();
             sw.Stop();
-            Console.WriteLine(sw.Elapsed.Milliseconds);
+            Console.WriteLine(sw.Elapsed.TotalMilliseconds);
             Console.Read();
         }
     }
