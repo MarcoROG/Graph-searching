@@ -1,0 +1,6 @@
+F:\Backup marco 28-07-15\Programmazione\C#\Graph\Graph\Graph\bin\Debug\Graph.exe.config
+F:\Backup marco 28-07-15\Programmazione\C#\Graph\Graph\Graph\bin\Debug\Graph.exe
+F:\Backup marco 28-07-15\Programmazione\C#\Graph\Graph\Graph\bin\Debug\Graph.pdb
+F:\Backup marco 28-07-15\Programmazione\C#\Graph\Graph\Graph\obj\Debug\Graph.csprojResolveAssemblyReference.cache
+F:\Backup marco 28-07-15\Programmazione\C#\Graph\Graph\Graph\obj\Debug\Graph.exe
+F:\Backup marco 28-07-15\Programmazione\C#\Graph\Graph\Graph\obj\Debug\Graph.pdb
