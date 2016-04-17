@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Graphs.Utils;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Graphs.Search
+namespace Graphs.Search.Uninformed
 {
     class LCFSearch : Search
     {
